@@ -39,7 +39,7 @@ lagarto spock |
 
 ```javascript
 //SOLUCAO 1
-//Leitura da entrada referente a quantidade de jogadas*/
+/*Leitura da entrada referente a quantidade de jogadas*/
 let quantJogadas = gets();
 /*Será lido cada jogada, armazedo em um array*/
 for (var i = 0; i < quantJogadas; i++) {
