@@ -31,9 +31,7 @@ Exemplos de Entrada  | Exemplos de Saída
 ------------- | -------------
 3 | empate
 spock spock | Marcia
-
 tesoura spock | Fernanda
-
 lagarto spock |
 
 
