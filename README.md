@@ -77,11 +77,11 @@ function jogo(j1, j2) {
 //SOLUCAO 2
 /*Leitura da entrada referente a quantidade de jogadas*/
 quantTeste = gets();
-/*Será lido cada jogada. Será chamado a função e impresso no console*/
+/*Será lido cada jogada (entrada uma string). Será chamado a função e impresso no console*/
 while (quantTeste--) console.log(jogo(gets()));
 
 function jogo(jogadas) {
-    j = jogadas.split(" "); /*Será lido cada jogada, armazedo em um array*/
+    j = jogadas.split(" "); /*Será armazedo a entrada (string) em um array*/
     jogador1 = "fernanda";
     jogador2 = "marcia";
     /*verificação do switch será feito referente a jodada do primeiro jogador.
