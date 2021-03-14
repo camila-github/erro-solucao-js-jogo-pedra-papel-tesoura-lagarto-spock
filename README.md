@@ -1,7 +1,7 @@
-## Treinamento Digital Innovation One - Exercicio - Jogo-pedra-papel-tesoura-lagarto-spock
+## Exercicio - Jogo-pedra-papel-tesoura-lagarto-spock
 
-O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS -  Introdução a busca e substituição em JavaScript.
-(https://digitalinnovation.one)
+O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS -  Introdução a busca e substituição em JavaScript.(https://digitalinnovation.one)
+
 
 #### Descrição do Desafio:
 
@@ -23,6 +23,7 @@ Um dia, duas amigas, Fernanda e Marcia, decidiram apostar quem pagaria um almoç
 
 Haverá diversos casos de teste. O primeiro número a ser lido será um inteiro, representando a quantidade de casos de teste. Cada caso de teste tem duas palavras, representando a escolha de Fernanda e de Marcia, respectivamente.
 
+
 #### Saída:
 
 Para cada caso de teste, imprima quem venceu, ou se houve empate.
@@ -37,9 +38,47 @@ lagarto spock |
 
 ```javascript
 //SOLUCAO 1
+const jogo = (jogadas) => {
+    /*Será armazenado a entrada (string) em atribuição via desestruturação (destruturação de array)*/
+    const [jogadaUm, jogadaDois] = jogadas.split(" ");
+    const jogadorUm = "fernanda";
+    const jogadorDois = "marcia"; 
+    /*verificação do switch será feito referente a jogada do primeiro jogador.
+      O return será de acordo com o resultado do if ternario, que será verificado 
+      de acordo com a jodada do segundo jogador*/
+    switch (jogadaUm) {
+      case 'papel':
+      return (jogadaDois === 'papel') ? "empate" : ((jogadaDois === 'pedra' || jogadaDois === 'spock') ? jogadorUm : jogadorDois);
+      break;
+      
+      case 'pedra':
+      return (jogadaDois === 'pedra') ? "empate" : ((jogadaDois === 'tesoura' || jogadaDois === 'lagarto') ? jogadorUm : jogadorDois);
+      break;
+      
+      case 'tesoura':
+      return (jogadaDois === 'tesoura') ? "empate" : ((jogadaDois === 'papel' || jogadaDois === 'lagarto') ? jogadorUm : jogadorDois);
+      break;
+        
+      case 'lagarto':
+      return (jogadaDois === 'lagarto') ? "empate" : ((jogadaDois === 'spock' || jogadaDois === 'papel') ? jogadorUm : jogadorDois);
+      break;
+      
+      case 'spock':
+      return (jogadaDois === 'spock') ?  "empate" : ((jogadaDois === 'pedra' || jogadaDois === 'tesoura') ? jogadorUm : jogadorDois);
+      break;
+    }
+  }
+  /*Leitura da entrada referente a quantidade de jogadas*/
+  (function casosDeTeste(num){
+    while (num--) console.log(jogo(gets()));
+  })(gets());
+    
+
+
+  //SOLUCAO 2
 /*Leitura da entrada referente a quantidade de jogadas*/
 let quantJogadas = gets();
-/*Será lido cada jogada, armazedo em um array*/
+/*Será lido cada jogada, armazenado em um array*/
 for (var i = 0; i < quantJogadas; i++) {
     let jogadas = gets().split(" ");
     /*será chamado a função e imprimirá no console*/
@@ -49,8 +88,9 @@ for (var i = 0; i < quantJogadas; i++) {
 function jogo(j1, j2) {
     let jogador1 = "fernanda";
     let jogador2 = "marcia";
-    /*verificação do switch será feito referente a jodada do primeiro jogador.
-    O return será de acordo com o resultado do if ternario, que será verificado de acordo com a jodada do segundo jogador*/
+     /*verificação do switch será feito referente a jogada do primeiro jogador.
+      O return será de acordo com o resultado do if ternario, que será verificado 
+      de acordo com a jodada do segundo jogador*/
     switch (j1) {
         case 'papel':
             return (j2 === 'papel') ? "empate" : ((j2 === 'pedra' || j2 === 'spock') ? jogador1 : jogador2);
@@ -74,38 +114,4 @@ function jogo(j1, j2) {
     }
 }
 
-//SOLUCAO 2
-/*Leitura da entrada referente a quantidade de jogadas*/
-quantTeste = gets();
-/*Será lido cada jogada (entrada uma string). Será chamado a função e impresso no console*/
-while (quantTeste--) console.log(jogo(gets()));
-
-function jogo(jogadas) {
-    j = jogadas.split(" "); /*Será armazedo a entrada (string) em um array*/
-    jogador1 = "fernanda";
-    jogador2 = "marcia";
-    /*verificação do switch será feito referente a jodada do primeiro jogador.
-      O return será de acordo com o resultado do if ternario, que será verificado de acordo com a jodada do segundo jogador*/
-    switch (j[0]) {
-        case 'papel':
-            return (j[1] === 'papel') ? "empate" : ((j[1] === 'pedra' || j[1] === 'spock') ? jogador1 : jogador2);
-            break;
-
-        case 'pedra':
-            return (j[1] === 'pedra') ? "empate" : ((j[1] === 'tesoura' || j[1] === 'lagarto') ? jogador1 : jogador2);
-            break;
-
-        case 'tesoura':
-            return (j[1] === 'tesoura') ? "empate" : ((j[1] === 'papel' || j[1] === 'lagarto') ? jogador1 : jogador2);
-            break;
-
-        case 'lagarto':
-            return (j[1] === 'lagarto') ? "empate" : ((j[1] === 'spock' || j[1] === 'papel') ? jogador1 : jogador2);
-            break;
-
-        case 'spock':
-            return (j[1] === 'spock') ? "empate" : ((j[1] === 'pedra' || j[1] === 'tesoura') ? jogador1 : jogador2);
-            break;
-    }
-}
 ```
