@@ -1,6 +1,6 @@
 ## Exercicio - Jogo-pedra-papel-tesoura-lagarto-spock
 
-O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS -  Introdução a busca e substituição em JavaScript.(https://digitalinnovation.one)
+O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS -  Introdução a busca e substituição em JavaScript. [https://digitalinnovation.one](https://digitalinnovation.one)
 
 
 #### Descrição do Desafio:
